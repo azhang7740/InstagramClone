@@ -14,7 +14,6 @@
     self = [super init];
     if (self) {
         self.loginView = view;
-        self.success = false;
         return self;
     }
     return nil;
@@ -41,9 +40,8 @@
     [newUser signUpInBackgroundWithBlock:^(BOOL succeeded, NSError * error) {
         if (error) {
             self.loginView.errorLabel.text = @"Username is taken.";
-            self.success = false;
         } else {
-            self.success = true;
+            [self.delegate performSegueToHome];
         }
     }];
 }
@@ -59,9 +57,8 @@
     [PFUser logInWithUsernameInBackground:username password:password block:^(PFUser * user, NSError *  error) {
         if (error) {
             self.loginView.errorLabel.text = @"Invalid username or password";
-            self.success = false;
         } else {
-            self.success = true;
+            [self.delegate performSegueToHome];
         }
     }];
 }

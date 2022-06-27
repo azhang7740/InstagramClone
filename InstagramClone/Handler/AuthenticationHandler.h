@@ -10,10 +10,16 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@protocol AuthenticationDelegate
+
+- (void)performSegueToHome;
+
+@end
+
 @interface AuthenticationHandler : NSObject
 
 @property (nonatomic) LoginView *loginView;
-@property (nonatomic) BOOL success;
+@property (nonatomic, weak) id<AuthenticationDelegate> delegate;
 
 - (instancetype)init:(LoginView *)view;
 - (void)registerUser;
