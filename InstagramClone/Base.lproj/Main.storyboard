@@ -68,6 +68,13 @@
                             <constraint firstItem="L0K-fo-boe" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wxr-VQ-Z7K"/>
                             <constraint firstItem="LG2-L0-iG2" firstAttribute="top" secondItem="L0K-fo-boe" secondAttribute="bottom" constant="20" id="zub-XO-W16"/>
                         </constraints>
+                        <connections>
+                            <outlet property="loginButton" destination="7Dw-Oi-f61" id="4go-lD-P59"/>
+                            <outlet property="passwordTextField" destination="hV7-25-nh1" id="l2b-jh-cjL"/>
+                            <outlet property="signUpButton" destination="DHw-eu-8ni" id="8Ui-so-XIf"/>
+                            <outlet property="titleLabel" destination="L0K-fo-boe" id="j7q-td-rfJ"/>
+                            <outlet property="usernameTextField" destination="LG2-L0-iG2" id="oqe-9y-Lnt"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="loginView" destination="8bC-Xf-vdC" id="QPK-dt-GIi"/>
