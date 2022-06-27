@@ -6,15 +6,18 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "LoginView.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface AuthenticationHandler : NSObject
 
-- (NSError *)registerUser:(NSString *)username
-        withPassword:(NSString *)password;
-- (NSError *)loginUser:(NSString *)username
-     withPassword:(NSString *)password;
+@property (nonatomic) LoginView *loginView;
+@property (nonatomic) BOOL success;
+
+- (instancetype)init:(LoginView *)view;
+- (void)registerUser;
+- (void)loginUser;
 
 @end
 

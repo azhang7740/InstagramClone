@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instagram" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L0K-fo-boe">
-                                <rect key="frame" x="116" y="310.5" width="182.5" height="51.5"/>
+                                <rect key="frame" x="116" y="300.5" width="182.5" height="51.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="43"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -51,6 +51,12 @@
                                     <action selector="onTapLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RtE-Tw-Ls8"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ur7-th-q4q">
+                                <rect key="frame" x="92" y="367" width="230" height="12"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.012242017237580782" alpha="0.89803921568627454" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -62,13 +68,17 @@
                             <constraint firstItem="7Dw-Oi-f61" firstAttribute="top" secondItem="DHw-eu-8ni" secondAttribute="top" id="MZ7-at-PDM"/>
                             <constraint firstItem="LG2-L0-iG2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bXe-iJ-cBI"/>
                             <constraint firstItem="DHw-eu-8ni" firstAttribute="leading" secondItem="hV7-25-nh1" secondAttribute="leading" id="d2H-DI-CDm"/>
+                            <constraint firstItem="LG2-L0-iG2" firstAttribute="top" secondItem="Ur7-th-q4q" secondAttribute="bottom" constant="3" id="hCW-wM-Tbu"/>
                             <constraint firstItem="hV7-25-nh1" firstAttribute="trailing" secondItem="LG2-L0-iG2" secondAttribute="trailing" id="hct-aT-AyU"/>
                             <constraint firstItem="hV7-25-nh1" firstAttribute="top" secondItem="LG2-L0-iG2" secondAttribute="bottom" constant="5" id="meO-Bz-MGR"/>
+                            <constraint firstItem="LG2-L0-iG2" firstAttribute="trailing" secondItem="Ur7-th-q4q" secondAttribute="trailing" id="r4V-iR-dcR"/>
                             <constraint firstItem="DHw-eu-8ni" firstAttribute="top" secondItem="hV7-25-nh1" secondAttribute="bottom" constant="10" id="vx7-NB-wOd"/>
                             <constraint firstItem="L0K-fo-boe" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wxr-VQ-Z7K"/>
-                            <constraint firstItem="LG2-L0-iG2" firstAttribute="top" secondItem="L0K-fo-boe" secondAttribute="bottom" constant="20" id="zub-XO-W16"/>
+                            <constraint firstItem="LG2-L0-iG2" firstAttribute="leading" secondItem="Ur7-th-q4q" secondAttribute="leading" id="zRM-zq-cS9"/>
+                            <constraint firstItem="LG2-L0-iG2" firstAttribute="top" secondItem="L0K-fo-boe" secondAttribute="bottom" constant="30" id="zub-XO-W16"/>
                         </constraints>
                         <connections>
+                            <outlet property="errorLabel" destination="Ur7-th-q4q" id="z1k-6J-giR"/>
                             <outlet property="loginButton" destination="7Dw-Oi-f61" id="4go-lD-P59"/>
                             <outlet property="passwordTextField" destination="hV7-25-nh1" id="l2b-jh-cjL"/>
                             <outlet property="signUpButton" destination="DHw-eu-8ni" id="8Ui-so-XIf"/>
@@ -96,7 +106,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Home" id="Gkz-ns-Hc6" userLabel="Home">
                         <barButtonItem key="leftBarButtonItem" style="plain" id="ixA-5N-X97">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="Tc9-wA-Qsx">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="Tc9-wA-Qsx">
                                 <rect key="frame" x="20" y="5" width="92" height="34.5"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
@@ -104,7 +114,7 @@
                             </button>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="plain" id="uLD-vj-Dry">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="cYX-De-xoD">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="cYX-De-xoD">
                                 <rect key="frame" x="369" y="9.5" width="25" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -120,9 +130,10 @@
         <!--Tab Bar Controller-->
         <scene sceneID="rOx-HK-Lid">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="Zvn-Cj-3eP" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabBarController" automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="Zvn-Cj-3eP" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="o4x-Uu-hxK">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>

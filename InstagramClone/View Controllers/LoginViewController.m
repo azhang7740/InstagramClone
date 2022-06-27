@@ -12,6 +12,7 @@
 @interface LoginViewController ()
 
 @property (strong, nonatomic) IBOutlet LoginView *loginView;
+@property (nonatomic) AuthenticationHandler *authenticate;
 
 @end
 
@@ -19,10 +20,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.authenticate = [[AuthenticationHandler alloc] init:self.loginView];
 }
 
 - (IBAction)onTapSignUp:(id)sender {
-    
+
 }
 
 - (IBAction)onTapLogin:(id)sender {
