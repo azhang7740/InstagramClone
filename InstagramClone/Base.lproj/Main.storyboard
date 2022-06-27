@@ -36,7 +36,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DHw-eu-8ni">
-                                <rect key="frame" x="92" y="460" width="75" height="31"/>
+                                <rect key="frame" x="92" y="465" width="75" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Sign Up"/>
                                 <connections>
@@ -44,7 +44,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Dw-Oi-f61">
-                                <rect key="frame" x="262" y="460" width="60" height="31"/>
+                                <rect key="frame" x="262" y="465" width="60" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Login"/>
                                 <connections>
@@ -64,7 +64,7 @@
                             <constraint firstItem="DHw-eu-8ni" firstAttribute="leading" secondItem="hV7-25-nh1" secondAttribute="leading" id="d2H-DI-CDm"/>
                             <constraint firstItem="hV7-25-nh1" firstAttribute="trailing" secondItem="LG2-L0-iG2" secondAttribute="trailing" id="hct-aT-AyU"/>
                             <constraint firstItem="hV7-25-nh1" firstAttribute="top" secondItem="LG2-L0-iG2" secondAttribute="bottom" constant="5" id="meO-Bz-MGR"/>
-                            <constraint firstItem="DHw-eu-8ni" firstAttribute="top" secondItem="hV7-25-nh1" secondAttribute="bottom" constant="5" id="vx7-NB-wOd"/>
+                            <constraint firstItem="DHw-eu-8ni" firstAttribute="top" secondItem="hV7-25-nh1" secondAttribute="bottom" constant="10" id="vx7-NB-wOd"/>
                             <constraint firstItem="L0K-fo-boe" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wxr-VQ-Z7K"/>
                             <constraint firstItem="LG2-L0-iG2" firstAttribute="top" secondItem="L0K-fo-boe" secondAttribute="bottom" constant="20" id="zub-XO-W16"/>
                         </constraints>
