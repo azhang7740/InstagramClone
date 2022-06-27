@@ -7,6 +7,7 @@
 
 #import "LoginViewController.h"
 #import "LoginView.h"
+#import "AuthenticationHandler.h"
 
 @interface LoginViewController ()
 

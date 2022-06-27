@@ -84,41 +84,78 @@
             </objects>
             <point key="canvasLocation" x="18.840579710144929" y="75.669642857142847"/>
         </scene>
-        <!--Item-->
+        <!--Home-->
         <scene sceneID="yur-em-2hl">
             <objects>
-                <viewController id="hIw-rZ-lsf" customClass="HomeViewController" sceneMemberID="viewController">
+                <viewController title="Home" id="hIw-rZ-lsf" customClass="HomeViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wOc-2C-KxW">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="Kb9-na-Lvp"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="wl4-2a-m3c"/>
+                    <navigationItem key="navigationItem" title="Home" id="Gkz-ns-Hc6" userLabel="Home">
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="ixA-5N-X97">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="Tc9-wA-Qsx">
+                                <rect key="frame" x="20" y="5" width="92" height="34.5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Logout"/>
+                            </button>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="uLD-vj-Dry">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="cYX-De-xoD">
+                                <rect key="frame" x="369" y="9.5" width="25" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="insta_camera_btn"/>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8us-EO-d2c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="928.98550724637687" y="753.34821428571422"/>
+            <point key="canvasLocation" x="1839.1304347826087" y="753.34821428571422"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="rOx-HK-Lid">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="Zvn-Cj-3eP" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="Zvn-Cj-3eP" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="o4x-Uu-hxK">
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="hIw-rZ-lsf" kind="relationship" relationship="viewControllers" id="XTT-rQ-vGH"/>
+                        <segue destination="Zh7-6X-imM" kind="relationship" relationship="viewControllers" id="XTT-rQ-vGH"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Oc9-oa-chO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="18.840579710144929" y="753.34821428571422"/>
         </scene>
+        <!--Item-->
+        <scene sceneID="vom-9I-zhP">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Zh7-6X-imM" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="wl4-2a-m3c"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="uFP-7x-lvF">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="hIw-rZ-lsf" kind="relationship" relationship="rootViewController" id="Z4M-ix-dLW"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VBb-jb-qCX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="928.98550724637687" y="753.34821428571422"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="insta_camera_btn" width="25" height="25"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
