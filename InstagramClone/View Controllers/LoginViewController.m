@@ -9,7 +9,7 @@
 #import "LoginView.h"
 #import "AuthenticationHandler.h"
 
-@interface LoginViewController () <AuthenticationDelegate>
+@interface LoginViewController () <AuthenticationDelegate, UITextFieldDelegate>
 
 @property (strong, nonatomic) IBOutlet LoginView *loginView;
 @property (nonatomic) AuthenticationHandler *authenticate;
@@ -24,6 +24,9 @@
     self.loginView.errorLabel.text = @"";
     self.authenticate = [[AuthenticationHandler alloc] init:self.loginView];
     self.authenticate.delegate = self;
+    
+    self.loginView.passwordTextField.delegate = self;
+    self.loginView.usernameTextField.delegate = self;
 }
 
 - (void)performSegueToHome {
@@ -37,6 +40,10 @@
 
 - (IBAction)onTapLogin:(id)sender {
     [self.authenticate loginUser];
+}
+
+- (IBAction)onTapOutside:(id)sender {
+    [self.view endEditing:true];
 }
 
 @end

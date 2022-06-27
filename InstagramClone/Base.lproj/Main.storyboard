@@ -60,6 +60,7 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="7Dw-Oi-f61" firstAttribute="trailing" secondItem="hV7-25-nh1" secondAttribute="trailing" id="2Pa-3G-zmC"/>
                             <constraint firstItem="hV7-25-nh1" firstAttribute="leading" secondItem="LG2-L0-iG2" secondAttribute="leading" id="4rZ-aR-y2K"/>
@@ -84,6 +85,7 @@
                             <outlet property="signUpButton" destination="DHw-eu-8ni" id="8Ui-so-XIf"/>
                             <outlet property="titleLabel" destination="L0K-fo-boe" id="j7q-td-rfJ"/>
                             <outlet property="usernameTextField" destination="LG2-L0-iG2" id="oqe-9y-Lnt"/>
+                            <outletCollection property="gestureRecognizers" destination="T4X-Jm-a1i" appends="YES" id="PJZ-wp-9pz"/>
                         </connections>
                     </view>
                     <connections>
@@ -91,6 +93,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="T4X-Jm-a1i">
+                    <connections>
+                        <action selector="onTapOutside:" destination="BYZ-38-t0r" id="cNK-I1-zTI"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="18.840579710144929" y="75.669642857142847"/>
         </scene>
