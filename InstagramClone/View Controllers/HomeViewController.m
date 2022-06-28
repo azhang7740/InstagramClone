@@ -8,6 +8,7 @@
 #import "HomeViewController.h"
 #import "LogoutHandler.h"
 #import "ComposeViewController.h"
+#import "DetailsViewController.h"
 #import "PostCell.h"
 
 #import "Post.h"
@@ -33,6 +34,9 @@
                        action:@selector(beginRefresh:)
              forControlEvents:UIControlEventValueChanged];
     [self.timelineTableView insertSubview:refreshControl atIndex:0];
+    
+    UINib *nib = [UINib nibWithNibName:@"PostCell" bundle:nil];
+    [self.timelineTableView registerNib:nib forCellReuseIdentifier:@"PostCellId"];
 }
 
 - (void)fetchPosts {
@@ -48,6 +52,7 @@
             
         }
     }];
+    
 }
 
 - (IBAction)onTapLogout:(id)sender {
@@ -79,7 +84,7 @@
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView
                  cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
-    PostCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PostCell"
+    PostCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PostCellId"
                                                       forIndexPath:indexPath];
     if (indexPath.row < self.posts.count) {
         PFFileObject *image = self.posts[indexPath.row].image;
@@ -100,7 +105,12 @@
 
 - (void)tableView:(UITableView *)tableView
 didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+    UINavigationController *navigationController = self.navigationController;
+    DetailsViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"DetailsViewController"];
+    if (indexPath.row < self.posts.count) {
+        viewController.post = self.posts[indexPath.row];
+        [navigationController pushViewController: viewController animated:YES];
+    }
 }
 
 - (void)beginRefresh:(UIRefreshControl *)refreshControl {

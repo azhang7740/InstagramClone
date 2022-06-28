@@ -26,6 +26,8 @@
 		413DE4C2286A77DC00CCF8E1 /* ComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 413DE4C1286A77DC00CCF8E1 /* ComposeViewController.m */; };
 		413DE4C5286A7B3200CCF8E1 /* ComposeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 413DE4C4286A7B3200CCF8E1 /* ComposeView.m */; };
 		413DE4C9286A982F00CCF8E1 /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = 413DE4C8286A982F00CCF8E1 /* Post.m */; };
+		413DE4D4286B9AEB00CCF8E1 /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 413DE4D3286B9AEB00CCF8E1 /* DetailsViewController.m */; };
+		413DE4D6286BA9EF00CCF8E1 /* PostCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 413DE4D5286BA9EF00CCF8E1 /* PostCell.xib */; };
 		43382D73B79D0DE80E660EB5 /* libPods-InstagramClone.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A9E1F467D50BE9017540C8F /* libPods-InstagramClone.a */; };
 		A8276D6A76135F6FF4DF0A35 /* libPods-InstagramClone-InstagramCloneUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EE90C1AC95AE43B6E0DD28E /* libPods-InstagramClone-InstagramCloneUITests.a */; };
 		B22AE57948E1D450B11E1696 /* libPods-InstagramCloneTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B3219C15214247C969E7551B /* libPods-InstagramCloneTests.a */; };
@@ -84,6 +86,9 @@
 		413DE4C4286A7B3200CCF8E1 /* ComposeView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ComposeView.m; sourceTree = "<group>"; };
 		413DE4C7286A982F00CCF8E1 /* Post.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Post.h; sourceTree = "<group>"; };
 		413DE4C8286A982F00CCF8E1 /* Post.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
+		413DE4D2286B9AEB00CCF8E1 /* DetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailsViewController.h; sourceTree = "<group>"; };
+		413DE4D3286B9AEB00CCF8E1 /* DetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailsViewController.m; sourceTree = "<group>"; };
+		413DE4D5286BA9EF00CCF8E1 /* PostCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostCell.xib; sourceTree = "<group>"; };
 		5615EC1A17DD6856BDD632B1 /* Pods-InstagramClone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstagramClone.release.xcconfig"; path = "Target Support Files/Pods-InstagramClone/Pods-InstagramClone.release.xcconfig"; sourceTree = "<group>"; };
 		5A9E1F467D50BE9017540C8F /* libPods-InstagramClone.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-InstagramClone.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BAF0152BC7CACBDF3C0D18A /* Pods-InstagramClone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstagramClone.debug.xcconfig"; path = "Target Support Files/Pods-InstagramClone/Pods-InstagramClone.debug.xcconfig"; sourceTree = "<group>"; };
@@ -191,6 +196,7 @@
 				413DE4BE286A768000CCF8E1 /* PostCell.m */,
 				413DE4C3286A7B3200CCF8E1 /* ComposeView.h */,
 				413DE4C4286A7B3200CCF8E1 /* ComposeView.m */,
+				413DE4D5286BA9EF00CCF8E1 /* PostCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -204,6 +210,8 @@
 				413DE4AE286A269F00CCF8E1 /* HomeViewController.m */,
 				413DE4C0286A77DC00CCF8E1 /* ComposeViewController.h */,
 				413DE4C1286A77DC00CCF8E1 /* ComposeViewController.m */,
+				413DE4D2286B9AEB00CCF8E1 /* DetailsViewController.h */,
+				413DE4D3286B9AEB00CCF8E1 /* DetailsViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -361,6 +369,7 @@
 			files = (
 				413DE4B9286A658700CCF8E1 /* Keys.plist in Resources */,
 				413DE483286A204900CCF8E1 /* LaunchScreen.storyboard in Resources */,
+				413DE4D6286BA9EF00CCF8E1 /* PostCell.xib in Resources */,
 				413DE480286A204900CCF8E1 /* Assets.xcassets in Resources */,
 				413DE47E286A204900CCF8E1 /* Main.storyboard in Resources */,
 			);
@@ -500,6 +509,7 @@
 				413DE4C9286A982F00CCF8E1 /* Post.m in Sources */,
 				413DE478286A204900CCF8E1 /* SceneDelegate.m in Sources */,
 				413DE4AF286A269F00CCF8E1 /* HomeViewController.m in Sources */,
+				413DE4D4286B9AEB00CCF8E1 /* DetailsViewController.m in Sources */,
 				413DE4AC286A265800CCF8E1 /* LoginViewController.m in Sources */,
 				413DE4C5286A7B3200CCF8E1 /* ComposeView.m in Sources */,
 			);
