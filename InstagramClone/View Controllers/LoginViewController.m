@@ -12,7 +12,7 @@
 @interface LoginViewController () <AuthenticationDelegate, UITextFieldDelegate>
 
 @property (strong, nonatomic) IBOutlet LoginView *loginView;
-@property (nonatomic) AuthenticationHandler *authenticate;
+@property (nonatomic) AuthenticationHandler *authenticationHandler;
 
 @end
 
@@ -22,8 +22,8 @@
     [super viewDidLoad];
     
     self.loginView.errorLabel.text = @"";
-    self.authenticate = [[AuthenticationHandler alloc] init:self.loginView];
-    self.authenticate.delegate = self;
+    self.authenticationHandler = [[AuthenticationHandler alloc] init:self.loginView];
+    self.authenticationHandler.delegate = self;
     
     self.loginView.passwordTextField.delegate = self;
     self.loginView.usernameTextField.delegate = self;
@@ -34,12 +34,16 @@
    [self presentViewController:tabBarController animated:YES completion:nil];
 }
 
+- (void)completedAuthentication {
+    [self performSegueToHome];
+}
+
 - (IBAction)onTapSignUp:(id)sender {
-    [self.authenticate registerUser];
+    [self.authenticationHandler registerUser];
 }
 
 - (IBAction)onTapLogin:(id)sender {
-    [self.authenticate loginUser];
+    [self.authenticationHandler loginUser];
 }
 
 - (IBAction)onTapOutside:(id)sender {

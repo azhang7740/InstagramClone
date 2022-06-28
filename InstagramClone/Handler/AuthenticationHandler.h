@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @protocol AuthenticationDelegate
 
-- (void)performSegueToHome;
+- (void)completedAuthentication;
 
 @end
 
@@ -20,6 +20,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic) LoginView *loginView;
 @property (nonatomic, weak) id<AuthenticationDelegate> delegate;
+
++ (instancetype)new NS_UNAVAILABLE;
+- (instancetype)init NS_UNAVAILABLE;
 
 - (instancetype)init:(LoginView *)view;
 - (void)registerUser;

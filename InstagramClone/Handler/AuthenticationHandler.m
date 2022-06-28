@@ -12,23 +12,18 @@
 
 - (instancetype)init:(LoginView *)view {
     self = [super init];
-    if (self) {
-        self.loginView = view;
-        return self;
-    }
-    return nil;
+    
+    self.loginView = view;
+    return self;
 }
 
-- (BOOL)checkEmptyFields {
-    if ([self.loginView.usernameTextField.text isEqual:@""] ||
-        [self.loginView.passwordTextField.text isEqual:@""]) {
-        return true;
-    }
-    return false;
+- (BOOL)fieldsAreEmpty {
+    return [self.loginView.usernameTextField.text isEqual:@""] ||
+    [self.loginView.passwordTextField.text isEqual:@""];
 }
 
 - (void)registerUser {
-    if ([self checkEmptyFields]) {
+    if ([self fieldsAreEmpty]) {
         self.loginView.errorLabel.text = @"Username or password field is empty.";
         return;
     }
@@ -41,13 +36,13 @@
         if (error) {
             self.loginView.errorLabel.text = @"Username is taken.";
         } else {
-            [self.delegate performSegueToHome];
+            [self.delegate completedAuthentication];
         }
     }];
 }
 
 - (void)loginUser {
-    if ([self checkEmptyFields]) {
+    if ([self fieldsAreEmpty]) {
         self.loginView.errorLabel.text = @"Username or password field is empty.";
         return;
     }
@@ -58,7 +53,7 @@
         if (error) {
             self.loginView.errorLabel.text = @"Invalid username or password";
         } else {
-            [self.delegate performSegueToHome];
+            [self.delegate completedAuthentication];
         }
     }];
 }
