@@ -189,6 +189,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" image="insta_camera_btn"/>
+                                <connections>
+                                    <action selector="onTapCompose:" destination="hIw-rZ-lsf" eventType="touchUpInside" id="xr6-Vs-ssF"/>
+                                </connections>
                             </button>
                         </barButtonItem>
                     </navigationItem>
@@ -203,16 +206,76 @@
         <!--Post-->
         <scene sceneID="Nbc-3j-thQ">
             <objects>
-                <viewController id="BO3-Rl-tIg" customClass="ComposeViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ComposeViewController" modalPresentationStyle="fullScreen" id="BO3-Rl-tIg" customClass="ComposeViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="K0X-SH-LZj" customClass="ComposeView">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dOF-Ap-9hN">
+                                <rect key="frame" x="32" y="118" width="350" height="350"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="350" id="M0z-Ix-etC"/>
+                                    <constraint firstAttribute="height" constant="350" id="hVJ-HN-zkP"/>
+                                </constraints>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" text="text" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="tsG-lV-OzM">
+                                <rect key="frame" x="32" y="478" width="350" height="33"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="K6h-Qi-qYa"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="tsG-lV-OzM" firstAttribute="trailing" secondItem="dOF-Ap-9hN" secondAttribute="trailing" id="0sn-2s-hiv"/>
+                            <constraint firstItem="tsG-lV-OzM" firstAttribute="leading" secondItem="dOF-Ap-9hN" secondAttribute="leading" id="97Q-1e-PMf"/>
+                            <constraint firstItem="dOF-Ap-9hN" firstAttribute="centerX" secondItem="K0X-SH-LZj" secondAttribute="centerX" id="c3l-v6-Fbs"/>
+                            <constraint firstItem="tsG-lV-OzM" firstAttribute="top" secondItem="dOF-Ap-9hN" secondAttribute="bottom" constant="10" id="ct8-Sh-wvB"/>
+                            <constraint firstItem="dOF-Ap-9hN" firstAttribute="top" secondItem="K6h-Qi-qYa" secondAttribute="top" constant="30" id="t7d-tO-qaq"/>
+                        </constraints>
+                        <connections>
+                            <outlet property="postCaption" destination="tsG-lV-OzM" id="ORG-Xf-6GH"/>
+                            <outlet property="postImage" destination="dOF-Ap-9hN" id="v9F-xV-W9d"/>
+                            <outletCollection property="gestureRecognizers" destination="4L1-rP-kfi" appends="YES" id="uMa-iX-NYA"/>
+                        </connections>
                     </view>
-                    <navigationItem key="navigationItem" title="Post" id="TeG-fs-7xU"/>
+                    <navigationItem key="navigationItem" title="Post" id="TeG-fs-7xU">
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="ohy-W5-XcW">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="w8B-al-0MK">
+                                <rect key="frame" x="20" y="5" width="92" height="34.5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Cancel"/>
+                                <connections>
+                                    <action selector="onTapCancel:" destination="BO3-Rl-tIg" eventType="touchUpInside" id="8JK-FI-BFS"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="phV-dQ-9QX">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="IFN-qd-3Xj">
+                                <rect key="frame" x="302" y="5" width="92" height="34.5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Share"/>
+                                <connections>
+                                    <action selector="onTapShare:" destination="BO3-Rl-tIg" eventType="touchUpInside" id="Fvq-ml-YF7"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="composeView" destination="K0X-SH-LZj" id="3gC-Ew-iHn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8jt-hN-12G" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="4L1-rP-kfi">
+                    <connections>
+                        <action selector="onTapOutside:" destination="BO3-Rl-tIg" id="4hM-Ae-6ZH"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="3621.739130434783" y="753.34821428571422"/>
         </scene>
@@ -256,7 +319,7 @@
         <!--Navigation Controller-->
         <scene sceneID="QAF-3D-4U0">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="B1f-8f-Rqk" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="ComposeNavigation" automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="B1f-8f-Rqk" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="rxa-u8-qC1">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>

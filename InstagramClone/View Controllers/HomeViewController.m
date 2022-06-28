@@ -7,8 +7,9 @@
 
 #import "HomeViewController.h"
 #import "LogoutHandler.h"
+#import "ComposeViewController.h"
 
-@interface HomeViewController () <UITableViewDataSource, UITableViewDelegate>
+@interface HomeViewController () <UITableViewDataSource, UITableViewDelegate, ComposeViewControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *timelineTableView;
 
@@ -26,6 +27,21 @@
 - (IBAction)onTapLogout:(id)sender {
     LogoutHandler *logoutAction = [[LogoutHandler alloc] init];
     [logoutAction logout];
+}
+
+- (IBAction)onTapCompose:(id)sender {
+    UINavigationController *composeNavigationController = (UINavigationController*)[self.storyboard instantiateViewControllerWithIdentifier:@"ComposeNavigation"];
+   [self presentViewController:composeNavigationController animated:YES completion:nil];
+    ComposeViewController *composeController = (ComposeViewController*)composeNavigationController.topViewController;
+    composeController.delegate = self;
+}
+
+- (void)didTapCancel {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)didTapShare {
+    
 }
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
