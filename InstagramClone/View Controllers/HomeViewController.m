@@ -6,6 +6,7 @@
 //
 
 #import "HomeViewController.h"
+#import "LogoutHandler.h"
 
 @interface HomeViewController ()
 
@@ -15,6 +16,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+}
+
+- (IBAction)onTapLogout:(id)sender {
+    LogoutHandler *logoutAction = [[LogoutHandler alloc] init];
+    [logoutAction logout];
 }
 
 @end
