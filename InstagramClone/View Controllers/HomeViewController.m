@@ -87,6 +87,7 @@
     PostCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PostCellId"
                                                       forIndexPath:indexPath];
     if (indexPath.row < self.posts.count) {
+        [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
         PFFileObject *image = self.posts[indexPath.row].image;
         [image getDataInBackgroundWithBlock:^(NSData * _Nullable data, NSError * _Nullable error) {
             if (!error) {

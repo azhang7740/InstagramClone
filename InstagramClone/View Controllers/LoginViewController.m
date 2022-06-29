@@ -27,6 +27,8 @@
     
     self.loginView.passwordTextField.delegate = self;
     self.loginView.usernameTextField.delegate = self;
+    self.loginView.passwordTextField.autocorrectionType = UITextAutocorrectionTypeNo;
+    self.loginView.usernameTextField.autocorrectionType = UITextAutocorrectionTypeNo;
 }
 
 - (void)performSegueToHome {
