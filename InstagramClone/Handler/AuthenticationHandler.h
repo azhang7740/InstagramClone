@@ -12,18 +12,19 @@ NS_ASSUME_NONNULL_BEGIN
 
 @protocol AuthenticationDelegate
 
-- (void)performSegueToHome;
+- (void)completedAuthentication;
+- (void)failedAuthentication:(NSString *)errorMessage;
 
 @end
 
 @interface AuthenticationHandler : NSObject
 
-@property (nonatomic) LoginView *loginView;
 @property (nonatomic, weak) id<AuthenticationDelegate> delegate;
 
-- (instancetype)init:(LoginView *)view;
-- (void)registerUser;
-- (void)loginUser;
+- (void)registerUser:(NSString *)username
+        withPassword:(NSString *)password;
+- (void)loginUser:(NSString *)username
+    withPassword:(NSString *)password;
 
 @end
 

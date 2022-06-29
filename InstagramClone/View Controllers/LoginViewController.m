@@ -12,7 +12,7 @@
 @interface LoginViewController () <AuthenticationDelegate, UITextFieldDelegate>
 
 @property (strong, nonatomic) IBOutlet LoginView *loginView;
-@property (nonatomic) AuthenticationHandler *authenticate;
+@property (nonatomic) AuthenticationHandler *authenticationHandler;
 
 @end
 
@@ -22,11 +22,13 @@
     [super viewDidLoad];
     
     self.loginView.errorLabel.text = @"";
-    self.authenticate = [[AuthenticationHandler alloc] init:self.loginView];
-    self.authenticate.delegate = self;
+    self.authenticationHandler = [[AuthenticationHandler alloc] init];
+    self.authenticationHandler.delegate = self;
     
     self.loginView.passwordTextField.delegate = self;
     self.loginView.usernameTextField.delegate = self;
+    self.loginView.passwordTextField.autocorrectionType = UITextAutocorrectionTypeNo;
+    self.loginView.usernameTextField.autocorrectionType = UITextAutocorrectionTypeNo;
 }
 
 - (void)performSegueToHome {
@@ -34,12 +36,22 @@
    [self presentViewController:tabBarController animated:YES completion:nil];
 }
 
+- (void)completedAuthentication {
+    [self performSegueToHome];
+}
+
+- (void)failedAuthentication:(NSString *)errorMessage {
+    self.loginView.errorLabel.text = errorMessage;
+}
+
 - (IBAction)onTapSignUp:(id)sender {
-    [self.authenticate registerUser];
+    [self.authenticationHandler registerUser:self.loginView.usernameTextField.text
+                                withPassword:self.loginView.passwordTextField.text];
 }
 
 - (IBAction)onTapLogin:(id)sender {
-    [self.authenticate loginUser];
+    [self.authenticationHandler loginUser:self.loginView.usernameTextField.text
+                             withPassword:self.loginView.passwordTextField.text];
 }
 
 - (IBAction)onTapOutside:(id)sender {

@@ -22,6 +22,16 @@
 		413DE4B7286A55E200CCF8E1 /* AuthenticationHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 413DE4B6286A55E200CCF8E1 /* AuthenticationHandler.m */; };
 		413DE4B9286A658700CCF8E1 /* Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 413DE4B8286A658700CCF8E1 /* Keys.plist */; };
 		413DE4BC286A6CF700CCF8E1 /* LogoutHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 413DE4BB286A6CF700CCF8E1 /* LogoutHandler.m */; };
+		413DE4BF286A768000CCF8E1 /* PostCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 413DE4BE286A768000CCF8E1 /* PostCell.m */; };
+		413DE4C2286A77DC00CCF8E1 /* ComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 413DE4C1286A77DC00CCF8E1 /* ComposeViewController.m */; };
+		413DE4C5286A7B3200CCF8E1 /* ComposeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 413DE4C4286A7B3200CCF8E1 /* ComposeView.m */; };
+		413DE4C9286A982F00CCF8E1 /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = 413DE4C8286A982F00CCF8E1 /* Post.m */; };
+		413DE4D4286B9AEB00CCF8E1 /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 413DE4D3286B9AEB00CCF8E1 /* DetailsViewController.m */; };
+		413DE4D6286BA9EF00CCF8E1 /* PostCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 413DE4D5286BA9EF00CCF8E1 /* PostCell.xib */; };
+		413DE4DA286C90E000CCF8E1 /* PostCellDecorator.m in Sources */ = {isa = PBXBuildFile; fileRef = 413DE4D9286C90E000CCF8E1 /* PostCellDecorator.m */; };
+		413DE4DD286CB01D00CCF8E1 /* RemotePost.m in Sources */ = {isa = PBXBuildFile; fileRef = 413DE4DC286CB01D00CCF8E1 /* RemotePost.m */; };
+		413DE4E0286CB03A00CCF8E1 /* ParsePostHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 413DE4DF286CB03A00CCF8E1 /* ParsePostHandler.m */; };
+		413DE4EC286CBBE500CCF8E1 /* PostBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 413DE4EB286CBBE500CCF8E1 /* PostBuilder.m */; };
 		43382D73B79D0DE80E660EB5 /* libPods-InstagramClone.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A9E1F467D50BE9017540C8F /* libPods-InstagramClone.a */; };
 		A8276D6A76135F6FF4DF0A35 /* libPods-InstagramClone-InstagramCloneUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EE90C1AC95AE43B6E0DD28E /* libPods-InstagramClone-InstagramCloneUITests.a */; };
 		B22AE57948E1D450B11E1696 /* libPods-InstagramCloneTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B3219C15214247C969E7551B /* libPods-InstagramCloneTests.a */; };
@@ -72,6 +82,25 @@
 		413DE4B8286A658700CCF8E1 /* Keys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Keys.plist; sourceTree = "<group>"; };
 		413DE4BA286A6CF700CCF8E1 /* LogoutHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LogoutHandler.h; sourceTree = "<group>"; };
 		413DE4BB286A6CF700CCF8E1 /* LogoutHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LogoutHandler.m; sourceTree = "<group>"; };
+		413DE4BD286A768000CCF8E1 /* PostCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostCell.h; sourceTree = "<group>"; };
+		413DE4BE286A768000CCF8E1 /* PostCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostCell.m; sourceTree = "<group>"; };
+		413DE4C0286A77DC00CCF8E1 /* ComposeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ComposeViewController.h; sourceTree = "<group>"; };
+		413DE4C1286A77DC00CCF8E1 /* ComposeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ComposeViewController.m; sourceTree = "<group>"; };
+		413DE4C3286A7B3200CCF8E1 /* ComposeView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ComposeView.h; sourceTree = "<group>"; };
+		413DE4C4286A7B3200CCF8E1 /* ComposeView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ComposeView.m; sourceTree = "<group>"; };
+		413DE4C7286A982F00CCF8E1 /* Post.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Post.h; sourceTree = "<group>"; };
+		413DE4C8286A982F00CCF8E1 /* Post.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
+		413DE4D2286B9AEB00CCF8E1 /* DetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailsViewController.h; sourceTree = "<group>"; };
+		413DE4D3286B9AEB00CCF8E1 /* DetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailsViewController.m; sourceTree = "<group>"; };
+		413DE4D5286BA9EF00CCF8E1 /* PostCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostCell.xib; sourceTree = "<group>"; };
+		413DE4D8286C90E000CCF8E1 /* PostCellDecorator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostCellDecorator.h; sourceTree = "<group>"; };
+		413DE4D9286C90E000CCF8E1 /* PostCellDecorator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostCellDecorator.m; sourceTree = "<group>"; };
+		413DE4DB286CB01D00CCF8E1 /* RemotePost.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RemotePost.h; sourceTree = "<group>"; };
+		413DE4DC286CB01D00CCF8E1 /* RemotePost.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RemotePost.m; sourceTree = "<group>"; };
+		413DE4DE286CB03A00CCF8E1 /* ParsePostHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ParsePostHandler.h; sourceTree = "<group>"; };
+		413DE4DF286CB03A00CCF8E1 /* ParsePostHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ParsePostHandler.m; sourceTree = "<group>"; };
+		413DE4EA286CBBE500CCF8E1 /* PostBuilder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostBuilder.h; sourceTree = "<group>"; };
+		413DE4EB286CBBE500CCF8E1 /* PostBuilder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostBuilder.m; sourceTree = "<group>"; };
 		5615EC1A17DD6856BDD632B1 /* Pods-InstagramClone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstagramClone.release.xcconfig"; path = "Target Support Files/Pods-InstagramClone/Pods-InstagramClone.release.xcconfig"; sourceTree = "<group>"; };
 		5A9E1F467D50BE9017540C8F /* libPods-InstagramClone.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-InstagramClone.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BAF0152BC7CACBDF3C0D18A /* Pods-InstagramClone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstagramClone.debug.xcconfig"; path = "Target Support Files/Pods-InstagramClone/Pods-InstagramClone.debug.xcconfig"; sourceTree = "<group>"; };
@@ -135,6 +164,8 @@
 		413DE472286A204900CCF8E1 /* InstagramClone */ = {
 			isa = PBXGroup;
 			children = (
+				413DE4D7286C90CF00CCF8E1 /* Decorators */,
+				413DE4C6286A97DF00CCF8E1 /* Model */,
 				413DE4B4286A55A400CCF8E1 /* Handler */,
 				413DE4A9286A262D00CCF8E1 /* View Controllers */,
 				413DE4A8286A262500CCF8E1 /* Views */,
@@ -174,6 +205,11 @@
 			children = (
 				413DE4B0286A26D000CCF8E1 /* LoginView.h */,
 				413DE4B1286A26D000CCF8E1 /* LoginView.m */,
+				413DE4BD286A768000CCF8E1 /* PostCell.h */,
+				413DE4BE286A768000CCF8E1 /* PostCell.m */,
+				413DE4C3286A7B3200CCF8E1 /* ComposeView.h */,
+				413DE4C4286A7B3200CCF8E1 /* ComposeView.m */,
+				413DE4D5286BA9EF00CCF8E1 /* PostCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -185,6 +221,10 @@
 				413DE4AB286A265800CCF8E1 /* LoginViewController.m */,
 				413DE4AD286A269F00CCF8E1 /* HomeViewController.h */,
 				413DE4AE286A269F00CCF8E1 /* HomeViewController.m */,
+				413DE4C0286A77DC00CCF8E1 /* ComposeViewController.h */,
+				413DE4C1286A77DC00CCF8E1 /* ComposeViewController.m */,
+				413DE4D2286B9AEB00CCF8E1 /* DetailsViewController.h */,
+				413DE4D3286B9AEB00CCF8E1 /* DetailsViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -196,8 +236,32 @@
 				413DE4B6286A55E200CCF8E1 /* AuthenticationHandler.m */,
 				413DE4BA286A6CF700CCF8E1 /* LogoutHandler.h */,
 				413DE4BB286A6CF700CCF8E1 /* LogoutHandler.m */,
+				413DE4DE286CB03A00CCF8E1 /* ParsePostHandler.h */,
+				413DE4DF286CB03A00CCF8E1 /* ParsePostHandler.m */,
+				413DE4EA286CBBE500CCF8E1 /* PostBuilder.h */,
+				413DE4EB286CBBE500CCF8E1 /* PostBuilder.m */,
 			);
 			path = Handler;
+			sourceTree = "<group>";
+		};
+		413DE4C6286A97DF00CCF8E1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				413DE4C7286A982F00CCF8E1 /* Post.h */,
+				413DE4C8286A982F00CCF8E1 /* Post.m */,
+				413DE4DB286CB01D00CCF8E1 /* RemotePost.h */,
+				413DE4DC286CB01D00CCF8E1 /* RemotePost.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		413DE4D7286C90CF00CCF8E1 /* Decorators */ = {
+			isa = PBXGroup;
+			children = (
+				413DE4D8286C90E000CCF8E1 /* PostCellDecorator.h */,
+				413DE4D9286C90E000CCF8E1 /* PostCellDecorator.m */,
+			);
+			path = Decorators;
 			sourceTree = "<group>";
 		};
 		535F1CFD78F47A34E3E43861 /* Frameworks */ = {
@@ -333,6 +397,7 @@
 			files = (
 				413DE4B9286A658700CCF8E1 /* Keys.plist in Resources */,
 				413DE483286A204900CCF8E1 /* LaunchScreen.storyboard in Resources */,
+				413DE4D6286BA9EF00CCF8E1 /* PostCell.xib in Resources */,
 				413DE480286A204900CCF8E1 /* Assets.xcassets in Resources */,
 				413DE47E286A204900CCF8E1 /* Main.storyboard in Resources */,
 			);
@@ -465,11 +530,20 @@
 				413DE4B7286A55E200CCF8E1 /* AuthenticationHandler.m in Sources */,
 				413DE4B2286A26D000CCF8E1 /* LoginView.m in Sources */,
 				413DE4BC286A6CF700CCF8E1 /* LogoutHandler.m in Sources */,
+				413DE4DA286C90E000CCF8E1 /* PostCellDecorator.m in Sources */,
+				413DE4C2286A77DC00CCF8E1 /* ComposeViewController.m in Sources */,
 				413DE475286A204900CCF8E1 /* AppDelegate.m in Sources */,
 				413DE486286A204900CCF8E1 /* main.m in Sources */,
+				413DE4DD286CB01D00CCF8E1 /* RemotePost.m in Sources */,
+				413DE4BF286A768000CCF8E1 /* PostCell.m in Sources */,
+				413DE4C9286A982F00CCF8E1 /* Post.m in Sources */,
 				413DE478286A204900CCF8E1 /* SceneDelegate.m in Sources */,
 				413DE4AF286A269F00CCF8E1 /* HomeViewController.m in Sources */,
+				413DE4EC286CBBE500CCF8E1 /* PostBuilder.m in Sources */,
+				413DE4E0286CB03A00CCF8E1 /* ParsePostHandler.m in Sources */,
+				413DE4D4286B9AEB00CCF8E1 /* DetailsViewController.m in Sources */,
 				413DE4AC286A265800CCF8E1 /* LoginViewController.m in Sources */,
+				413DE4C5286A7B3200CCF8E1 /* ComposeView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -646,9 +720,12 @@
 				DEVELOPMENT_TEAM = 3AU6YJ5LJW;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = InstagramClone/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Need camera access to take pictures";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Need library access to upload images";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -659,7 +736,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.codepath.InstagramClone;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -674,9 +751,12 @@
 				DEVELOPMENT_TEAM = 3AU6YJ5LJW;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = InstagramClone/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Need camera access to take pictures";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Need library access to upload images";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -687,7 +767,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.codepath.InstagramClone;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
