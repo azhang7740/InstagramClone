@@ -9,7 +9,9 @@
 #import "LogoutHandler.h"
 #import "ComposeViewController.h"
 #import "DetailsViewController.h"
+
 #import "PostCell.h"
+#import "PostCellDecorator.h"
 
 #import "ParsePostHandler.h"
 
@@ -86,9 +88,8 @@
     PostCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PostCellId"
                                                       forIndexPath:indexPath];
     if (indexPath.row < self.posts.count) {
-        [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
-        cell.postImage.image = self.posts[indexPath.row].image;
-        cell.captionTextView.text = self.posts[indexPath.row].caption;
+        PostCellDecorator *decorator = [[PostCellDecorator alloc] init];
+        [decorator decorateCell:cell withPost:self.posts[indexPath.row]];
     }
     
     return cell;

@@ -7,7 +7,7 @@
 
 #import "DetailsViewController.h"
 #import "PostCell.h"
-#import <Parse/Parse.h>
+#import "PostCellDecorator.h"
 
 @interface DetailsViewController () <UITableViewDelegate, UITableViewDataSource>
 
@@ -31,13 +31,8 @@
     PostCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PostCellId"
                                                       forIndexPath:indexPath];
     if (indexPath.row < 1) {
-        PFFileObject *image = self.post.image;
-        [image getDataInBackgroundWithBlock:^(NSData * _Nullable data, NSError * _Nullable error) {
-            if (!error) {
-                cell.postImage.image = [UIImage imageWithData:data];
-            }
-        }];
-        cell.captionTextView.text = self.post.caption;
+        PostCellDecorator *decorator = [[PostCellDecorator alloc] init];
+        [decorator decorateCell:cell withPost:self.post];
     }
     
     return cell;
