@@ -22,7 +22,7 @@
     [super viewDidLoad];
     
     self.loginView.errorLabel.text = @"";
-    self.authenticationHandler = [[AuthenticationHandler alloc] init:self.loginView];
+    self.authenticationHandler = [[AuthenticationHandler alloc] init];
     self.authenticationHandler.delegate = self;
     
     self.loginView.passwordTextField.delegate = self;
@@ -40,12 +40,18 @@
     [self performSegueToHome];
 }
 
+- (void)failedAuthentication:(NSString *)errorMessage {
+    self.loginView.errorLabel.text = errorMessage;
+}
+
 - (IBAction)onTapSignUp:(id)sender {
-    [self.authenticationHandler registerUser];
+    [self.authenticationHandler registerUser:self.loginView.usernameTextField.text
+                                withPassword:self.loginView.passwordTextField.text];
 }
 
 - (IBAction)onTapLogin:(id)sender {
-    [self.authenticationHandler loginUser];
+    [self.authenticationHandler loginUser:self.loginView.usernameTextField.text
+                             withPassword:self.loginView.passwordTextField.text];
 }
 
 - (IBAction)onTapOutside:(id)sender {
