@@ -11,12 +11,13 @@
 #import "DetailsViewController.h"
 #import "PostCell.h"
 
-#import "Post.h"
+#import "ParsePostHandler.h"
 
-@interface HomeViewController () <UITableViewDataSource, UITableViewDelegate, ComposeViewControllerDelegate>
+@interface HomeViewController () <UITableViewDataSource, UITableViewDelegate, ComposeViewControllerDelegate, ParsePostHandlerDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *timelineTableView;
-@property (nonatomic, strong) NSArray<Post *> *posts;
+@property (nonatomic, strong) NSMutableArray<Post *> *posts;
+@property (nonatomic, strong) ParsePostHandler *postHandler;
 
 @end
 
@@ -27,6 +28,9 @@
     
     self.timelineTableView.delegate = self;
     self.timelineTableView.dataSource = self;
+    
+    self.postHandler = [[ParsePostHandler alloc] init];
+    self.postHandler.delegate = self;
     [self fetchPosts];
     
     UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
@@ -40,18 +44,19 @@
 }
 
 - (void)fetchPosts {
-    PFQuery *query = [PFQuery queryWithClassName:@"Post"];
-    [query orderByDescending:@"createdAt"];
-    query.limit = 20;
+    [self.postHandler queryHomePosts];
+}
 
-    [query findObjectsInBackgroundWithBlock:^(NSArray *posts, NSError *error) {
-        if (posts != nil) {
-            self.posts = posts;
-            [self.timelineTableView reloadData];
-        } else {
-            
-        }
-    }];
+- (void)successfullyQueried:(NSMutableArray<Post *> *)posts {
+    self.posts = posts;
+    [self.timelineTableView reloadData];
+}
+
+- (void)postedSuccessfully {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)failedToPost {
     
 }
 
@@ -73,13 +78,7 @@
 
 - (void)didTapShare:(UIImage *)image
         withCaption:(NSString *)caption {
-    [Post postUserImage:image withCaption:caption withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
-        if (error) {
-            
-        } else {
-            [self dismissViewControllerAnimated:YES completion:nil];
-        }
-    }];
+    [self.postHandler post:image withCaption:caption];
 }
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView
@@ -88,12 +87,7 @@
                                                       forIndexPath:indexPath];
     if (indexPath.row < self.posts.count) {
         [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
-        PFFileObject *image = self.posts[indexPath.row].image;
-        [image getDataInBackgroundWithBlock:^(NSData * _Nullable data, NSError * _Nullable error) {
-            if (!error) {
-                cell.postImage.image = [UIImage imageWithData:data];
-            }
-        }];
+        cell.postImage.image = self.posts[indexPath.row].image;
         cell.captionTextView.text = self.posts[indexPath.row].caption;
     }
     
