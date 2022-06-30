@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @protocol PostBuilderDelegate
 
-- (void)didLoadImage:(NSData *)data;
+- (void)didLoadImage:(Post *)post;
 
 @end
 

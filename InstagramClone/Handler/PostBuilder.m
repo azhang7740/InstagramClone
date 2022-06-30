@@ -19,15 +19,14 @@
     newPost.caption = remotePost.caption;
     
     PFFileObject *image = remotePost.image;
-    newPost.likeCount = remotePost.likeCount;
-    newPost.commentCount = remotePost.commentCount;
+    newPost.likeCount = [remotePost.likeCount intValue];
+    newPost.commentCount = [remotePost.commentCount intValue];
+    newPost.imageData = UIImagePNGRepresentation([UIImage imageNamed:@"image_placeholder"]);
     [image getDataInBackgroundWithBlock:^(NSData * _Nullable data, NSError * _Nullable error) {
         if (!error) {
             newPost.imageData = data;
-            [self.delegate didLoadImage:data];
-        } else {
-            // default image
-        }
+            [self.delegate didLoadImage:newPost];
+        } 
     }];
     return newPost;
 }

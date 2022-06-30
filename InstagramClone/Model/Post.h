@@ -18,8 +18,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong) NSString *caption;
 @property (nonatomic, strong) NSData *imageData;
-@property (nonatomic, strong) NSNumber *likeCount;
-@property (nonatomic, strong) NSNumber *commentCount;
+@property (nonatomic) int likeCount;
+@property (nonatomic) int commentCount;
 
 @end
 

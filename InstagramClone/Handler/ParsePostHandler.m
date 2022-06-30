@@ -95,8 +95,8 @@
     return [PFFileObject fileObjectWithName:@"image.png" data:imageData];
 }
 
-- (void)didLoadImage:(nonnull NSData *)data {
-    [self.delegate didLoadImageData:data];
+- (void)didLoadImage:(nonnull Post *)post {
+    [self.delegate didLoadImageData:post];
 }
 
 @end

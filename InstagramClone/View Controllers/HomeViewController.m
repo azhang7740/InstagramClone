@@ -66,8 +66,15 @@
     [self.timelineTableView reloadData];
 }
 
-- (void)didLoadImageData:(NSData *)data {
-     [self.timelineTableView reloadData];
+- (void)didLoadImageData:(Post *)post {
+    for (int i = 0; i < self.posts.count; i++) {
+        if (post.postID == self.posts[i].postID) {
+            NSIndexPath *indexPath = [NSIndexPath indexPathForRow:i inSection:0];
+            PostCell *cell = [self.timelineTableView cellForRowAtIndexPath:indexPath];
+            PostCellDecorator *decorator = [[PostCellDecorator alloc] init];
+            [decorator decorateCell:cell withPost:self.posts[indexPath.row]];
+        }
+    }
 }
 
 - (void)postedSuccessfully {
