@@ -40,6 +40,7 @@ The following **additional** features are implemented:
 - [X] Error messages match errors when the user logs in
 - [X] Used a xib file to reuse tableviewcells that looked the same
 - [X] timestamps appear as time since a post was created
+- [X] displays an error view controller with an error message when network requests fail
 
 Please list two areas of the assignment you'd like to **discuss further with your peers** during the next class (examples include better ways to implement something, how to extend your app in certain ways, etc):
 
