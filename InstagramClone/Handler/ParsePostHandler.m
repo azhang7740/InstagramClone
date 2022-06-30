@@ -97,4 +97,30 @@
     [self.delegate didLoadImageData:post];
 }
 
+- (void)querySelfProfilePosts {
+    PFUser *currentUser = [PFUser currentUser];
+    PostBuilder *builder = [[PostBuilder alloc] init];
+    builder.delegate = self;
+    PFQuery *query = [PFQuery queryWithClassName:@"Post"];
+    [query orderByDescending:@"createdAt"];
+    [query includeKey:@"author"];
+    [query includeKey:@"createdAt"];
+    [query whereKey:@"author" equalTo:currentUser];
+    
+    query.limit = 20;
+
+    [query findObjectsInBackgroundWithBlock:^(NSArray<RemotePost *> *posts, NSError *error) {
+        if (posts != nil) {
+            NSMutableArray<Post *> *newPosts = [builder getPostsFromRemoteArray:posts];
+            [self.delegate successfullyQueried:newPosts];
+        } else {
+            [self.delegate failedRequest:@"Failed to query posts."];
+        }
+    }];
+}
+
+- (void)queryProfilePosts:(NSString *)username {
+    
+}
+
 @end

@@ -28,6 +28,8 @@ NS_ASSUME_NONNULL_BEGIN
   withCaption: (NSString * _Nullable )caption;
 - (void)queryHomePosts;
 - (void)queryMorePosts:(Post *)post;
+- (void)querySelfProfilePosts;
+- (void)queryProfilePosts:(NSString *)username;
 
 @end
 
