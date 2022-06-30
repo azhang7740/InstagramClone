@@ -88,7 +88,11 @@ ParsePostHandlerDelegate, LogoutHandlerDelegate, ErrorViewControllerDelegate>
 }
 
 - (void)failedLogout {
-    
+    UINavigationController *errorNavigationController = (UINavigationController*)[self.storyboard instantiateViewControllerWithIdentifier:@"ErrorNavigation"];
+    ErrorViewController *errorController = (ErrorViewController*)errorNavigationController.topViewController;
+    errorController.delegate = self;
+    errorController.message = @"Failed to logout.";
+    [self presentViewController:errorNavigationController animated:YES completion:nil];
 }
 
 - (IBAction)onTapLogout:(id)sender {
@@ -130,8 +134,6 @@ ParsePostHandlerDelegate, LogoutHandlerDelegate, ErrorViewControllerDelegate>
             [self fetchMorePosts:self.posts[indexPath.row - 1]];
         }
     }
-    
-    
     return cell;
 }
 

@@ -11,6 +11,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ProfileViewController : UIViewController
 
+@property (nonatomic) NSString *username;
+@property (nonatomic) NSData *imageData;
+
 @end
 
 NS_ASSUME_NONNULL_END
