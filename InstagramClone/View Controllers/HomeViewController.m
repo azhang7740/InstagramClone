@@ -9,13 +9,15 @@
 #import "LogoutHandler.h"
 #import "ComposeViewController.h"
 #import "DetailsViewController.h"
+#import "ErrorViewController.h"
 
 #import "PostCell.h"
 #import "PostCellDecorator.h"
 
 #import "ParsePostHandler.h"
 
-@interface HomeViewController () <UITableViewDataSource, UITableViewDelegate, ComposeViewControllerDelegate, ParsePostHandlerDelegate>
+@interface HomeViewController () <UITableViewDataSource, UITableViewDelegate, ComposeViewControllerDelegate,
+ParsePostHandlerDelegate, LogoutHandlerDelegate, ErrorViewControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *timelineTableView;
 @property (nonatomic, strong) NSMutableArray<Post *> *posts;
@@ -77,32 +79,42 @@
     }
 }
 
-- (void)postedSuccessfully {
-    [self dismissViewControllerAnimated:YES completion:nil];
+- (void)failedRequest:(NSString *)errorMessage {
+    UINavigationController *errorNavigationController = (UINavigationController*)[self.storyboard instantiateViewControllerWithIdentifier:@"ErrorNavigation"];
+    ErrorViewController *errorController = (ErrorViewController*)errorNavigationController.topViewController;
+    errorController.delegate = self;
+    errorController.message = errorMessage;
+    [self presentViewController:errorNavigationController animated:YES completion:nil];
 }
 
-- (void)failedToPost {
+- (void)failedLogout {
     
 }
 
 - (IBAction)onTapLogout:(id)sender {
     LogoutHandler *logoutAction = [[LogoutHandler alloc] init];
+    logoutAction.delegate = self;
     [logoutAction logout];
 }
 
 - (IBAction)onTapCompose:(id)sender {
     UINavigationController *composeNavigationController = (UINavigationController*)[self.storyboard instantiateViewControllerWithIdentifier:@"ComposeNavigation"];
-   [self presentViewController:composeNavigationController animated:YES completion:nil];
     ComposeViewController *composeController = (ComposeViewController*)composeNavigationController.topViewController;
     composeController.delegate = self;
+   [self presentViewController:composeNavigationController animated:YES completion:nil];
 }
 
 - (void)didTapCancel {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+- (void)didTapClose {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 - (void)didTapShare:(UIImage *)image
         withCaption:(NSString *)caption {
+    [self dismissViewControllerAnimated:YES completion:nil];
     [self.postHandler post:image withCaption:caption];
 }
 

@@ -20,9 +20,7 @@
     [ParsePostHandler postUserImage:image withCaption:caption
          withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
         if (error) {
-            [self.delegate failedToPost];
-        } else {
-            [self.delegate postedSuccessfully];
+            [self.delegate failedRequest:@"Your post wasn't successfully posted."];
         }
     }];
 }
@@ -42,7 +40,7 @@
             NSMutableArray<Post *> *newPosts = [builder getPostsFromRemoteArray:posts];
             [self.delegate successfullyQueried:newPosts];
         } else {
-            
+            [self.delegate failedRequest:@"Failed to query posts."];
         }
     }];
 }
@@ -63,7 +61,7 @@
             NSMutableArray<Post *> *newPosts = [builder getPostsFromRemoteArray:posts];
             [self.delegate successfullyQueriedMore:newPosts];
         } else {
-            
+            [self.delegate failedRequest:@"Failed to query posts."];
         }
     }];
 }

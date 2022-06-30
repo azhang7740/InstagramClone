@@ -13,8 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @protocol ParsePostHandlerDelegate
 
-- (void)postedSuccessfully;
-- (void)failedToPost;
+- (void)failedRequest:(NSString *)errorMessage;
 - (void)successfullyQueried:(NSMutableArray<Post *> *)posts;
 - (void)successfullyQueriedMore:(NSMutableArray<Post *> *)posts;
 - (void)didLoadImageData:(Post *)post;
