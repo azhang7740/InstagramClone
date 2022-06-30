@@ -54,6 +54,10 @@
     [self.timelineTableView reloadData];
 }
 
+- (void)didLoadImageData:(NSData *)data {
+     [self.timelineTableView reloadData];
+}
+
 - (void)postedSuccessfully {
     [self dismissViewControllerAnimated:YES completion:nil];
 }

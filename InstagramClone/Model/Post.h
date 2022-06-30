@@ -5,7 +5,6 @@
 //  Created by Angelina Zhang on 6/27/22.
 //
 
-#import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 
 NS_ASSUME_NONNULL_BEGIN
@@ -18,7 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSDate *createdAtDate;
 
 @property (nonatomic, strong) NSString *caption;
-@property (nonatomic, strong) UIImage *image;
+@property (nonatomic, strong) NSData *imageData;
 @property (nonatomic, strong) NSNumber *likeCount;
 @property (nonatomic, strong) NSNumber *commentCount;
 

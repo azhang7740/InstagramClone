@@ -22,22 +22,6 @@
     self.composeView.postCaption.text = @"Type here...";
     self.composeView.postCaption.textColor = UIColor.lightGrayColor;
     self.composeView.postCaption.delegate = self;
-    [self pushImagePickerController];
-}
-
-- (void)pushImagePickerController {
-    UIImagePickerController *imagePickerVC = [UIImagePickerController new];
-    imagePickerVC.delegate = self;
-    imagePickerVC.allowsEditing = YES;
-
-    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
-        imagePickerVC.sourceType = UIImagePickerControllerSourceTypeCamera;
-    }
-    else {
-        imagePickerVC.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-    }
-
-    [self presentViewController:imagePickerVC animated:YES completion:nil];
 }
 
 - (void)imagePickerController:(UIImagePickerController *)picker
@@ -46,6 +30,29 @@ didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
     self.composeView.postImage.image = editedImage;
     
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (IBAction)onTapCamera:(id)sender {
+    UIImagePickerController *imagePickerVC = [UIImagePickerController new];
+    imagePickerVC.delegate = self;
+    imagePickerVC.allowsEditing = YES;
+    
+    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+        imagePickerVC.sourceType = UIImagePickerControllerSourceTypeCamera;
+        
+        [self presentViewController:imagePickerVC animated:YES completion:nil];
+    } else {
+        
+    }
+}
+
+- (IBAction)onTapLibrary:(id)sender {
+    UIImagePickerController *imagePickerVC = [UIImagePickerController new];
+    imagePickerVC.delegate = self;
+    imagePickerVC.allowsEditing = YES;
+    imagePickerVC.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    
+    [self presentViewController:imagePickerVC animated:YES completion:nil];
 }
 
 - (IBAction)onTapCancel:(id)sender {

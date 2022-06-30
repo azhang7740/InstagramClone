@@ -9,6 +9,10 @@
 #import "RemotePost.h"
 #import "PostBuilder.h"
 
+@interface ParsePostHandler() <PostBuilderDelegate>
+
+@end
+
 @implementation ParsePostHandler
 
 - (void) post: (UIImage * _Nullable )image
@@ -25,6 +29,7 @@
 
 - (void)queryHomePosts{
     PostBuilder *build = [[PostBuilder alloc] init];
+    build.delegate = self;
     PFQuery *query = [PFQuery queryWithClassName:@"Post"];
     [query orderByDescending:@"createdAt"];
     [query includeKey:@"author"];
@@ -67,6 +72,10 @@
         return nil;
     }
     return [PFFileObject fileObjectWithName:@"image.png" data:imageData];
+}
+
+- (void)didLoadImage:(nonnull NSData *)data {
+    [self.delegate didLoadImageData:data];
 }
 
 @end

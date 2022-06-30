@@ -23,7 +23,8 @@
     newPost.commentCount = remotePost.commentCount;
     [image getDataInBackgroundWithBlock:^(NSData * _Nullable data, NSError * _Nullable error) {
         if (!error) {
-            newPost.image = [UIImage imageWithData:data];
+            newPost.imageData = data;
+            [self.delegate didLoadImage:data];
         } else {
             // default image
         }

@@ -12,7 +12,15 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@protocol PostBuilderDelegate
+
+- (void)didLoadImage:(NSData *)data;
+
+@end
+
 @interface PostBuilder : NSObject
+
+@property (nonatomic, weak) id<PostBuilderDelegate> delegate;
 
 - (Post *)getPostFromRemotePost:(RemotePost *)remotePost;
 - (NSMutableArray<Post *> *)getPostsFromRemoteArray:(NSArray<RemotePost *> *)remotePosts;

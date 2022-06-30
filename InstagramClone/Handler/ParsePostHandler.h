@@ -16,6 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)postedSuccessfully;
 - (void)failedToPost;
 - (void)successfullyQueried:(NSMutableArray<Post *> *)posts;
+- (void)didLoadImageData:(NSData *)data;
 
 @end
 
