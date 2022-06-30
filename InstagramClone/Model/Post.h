@@ -12,7 +12,6 @@ NS_ASSUME_NONNULL_BEGIN
 @interface Post : NSObject
 
 @property (nonatomic, strong) NSString *postID;
-@property (nonatomic, strong) NSString *userID;
 @property (nonatomic, strong) NSString *authorUsername;
 @property (nonatomic, strong) NSDate *createdAtDate;
 

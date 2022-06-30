@@ -12,8 +12,7 @@
 - (Post *)getPostFromRemotePost:(RemotePost *)remotePost {
     Post *newPost = [[Post alloc] init];
     
-    newPost.postID = remotePost.postID;
-    newPost.userID = remotePost.userID;
+    newPost.postID = remotePost.objectId;
     newPost.authorUsername = remotePost.author.username;
     newPost.createdAtDate = remotePost.createdAt;
     newPost.caption = remotePost.caption;
