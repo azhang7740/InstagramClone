@@ -14,7 +14,7 @@
             withPost: (Post *)post {
     [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
     cell.usernameLabel.text = post.authorUsername;
-    cell.postImage.image = post.image;
+    cell.postImage.image = [UIImage imageWithData:post.imageData];
     cell.captionTextView.text = post.caption;
     cell.dateLabel.text = [post.createdAtDate shortTimeAgoSinceNow];
 }

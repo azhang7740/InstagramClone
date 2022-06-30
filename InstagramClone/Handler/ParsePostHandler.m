@@ -9,6 +9,10 @@
 #import "RemotePost.h"
 #import "PostBuilder.h"
 
+@interface ParsePostHandler() <PostBuilderDelegate>
+
+@end
+
 @implementation ParsePostHandler
 
 - (void) post: (UIImage * _Nullable )image
@@ -16,15 +20,14 @@
     [ParsePostHandler postUserImage:image withCaption:caption
          withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
         if (error) {
-            [self.delegate failedToPost];
-        } else {
-            [self.delegate postedSuccessfully];
+            [self.delegate failedRequest:@"Your post wasn't successfully posted."];
         }
     }];
 }
 
 - (void)queryHomePosts{
-    PostBuilder *build = [[PostBuilder alloc] init];
+    PostBuilder *builder = [[PostBuilder alloc] init];
+    builder.delegate = self;
     PFQuery *query = [PFQuery queryWithClassName:@"Post"];
     [query orderByDescending:@"createdAt"];
     [query includeKey:@"author"];
@@ -34,10 +37,31 @@
 
     [query findObjectsInBackgroundWithBlock:^(NSArray<RemotePost *> *posts, NSError *error) {
         if (posts != nil) {
-            NSMutableArray<Post *> *newPosts = [build getPostsFromRemoteArray:posts];
+            NSMutableArray<Post *> *newPosts = [builder getPostsFromRemoteArray:posts];
             [self.delegate successfullyQueried:newPosts];
         } else {
-            
+            [self.delegate failedRequest:@"Failed to query posts."];
+        }
+    }];
+}
+
+- (void)queryMorePosts:(Post *)post {
+    PostBuilder *builder = [[PostBuilder alloc] init];
+    builder.delegate = self;
+    PFQuery *query = [PFQuery queryWithClassName:@"Post"];
+    [query orderByDescending:@"createdAt"];
+    [query includeKey:@"author"];
+    [query includeKey:@"createdAt"];
+    [query whereKey:@"createdAt" lessThan:post.createdAtDate];
+    
+    query.limit = 20;
+
+    [query findObjectsInBackgroundWithBlock:^(NSArray<RemotePost *> *posts, NSError *error) {
+        if (posts != nil) {
+            NSMutableArray<Post *> *newPosts = [builder getPostsFromRemoteArray:posts];
+            [self.delegate successfullyQueriedMore:newPosts];
+        } else {
+            [self.delegate failedRequest:@"Failed to query posts."];
         }
     }];
 }
@@ -67,6 +91,36 @@
         return nil;
     }
     return [PFFileObject fileObjectWithName:@"image.png" data:imageData];
+}
+
+- (void)didLoadImage:(nonnull Post *)post {
+    [self.delegate didLoadImageData:post];
+}
+
+- (void)querySelfProfilePosts {
+    PFUser *currentUser = [PFUser currentUser];
+    PostBuilder *builder = [[PostBuilder alloc] init];
+    builder.delegate = self;
+    PFQuery *query = [PFQuery queryWithClassName:@"Post"];
+    [query orderByDescending:@"createdAt"];
+    [query includeKey:@"author"];
+    [query includeKey:@"createdAt"];
+    [query whereKey:@"author" equalTo:currentUser];
+    
+    query.limit = 20;
+
+    [query findObjectsInBackgroundWithBlock:^(NSArray<RemotePost *> *posts, NSError *error) {
+        if (posts != nil) {
+            NSMutableArray<Post *> *newPosts = [builder getPostsFromRemoteArray:posts];
+            [self.delegate successfullyQueried:newPosts];
+        } else {
+            [self.delegate failedRequest:@"Failed to query posts."];
+        }
+    }];
+}
+
+- (void)queryProfilePosts:(NSString *)username {
+    
 }
 
 @end

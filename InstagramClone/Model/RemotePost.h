@@ -12,8 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface RemotePost : PFObject<PFSubclassing>
 
-@property (nonatomic, strong) NSString *postID;
-@property (nonatomic, strong) NSString *userID;
+@property (nonatomic, strong) NSString *objectId;
 @property (nonatomic, strong) PFUser *author;
 @property (nonatomic, strong) NSDate *createdAt;
 

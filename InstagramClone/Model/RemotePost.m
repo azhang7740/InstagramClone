@@ -9,8 +9,7 @@
 
 @implementation RemotePost
 
-@dynamic postID;
-@dynamic userID;
+@dynamic objectId;
 @dynamic author;
 @dynamic createdAt;
 @dynamic caption;

@@ -9,7 +9,15 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@protocol LogoutHandlerDelegate
+
+- (void)failedLogout;
+
+@end
+
 @interface LogoutHandler : NSObject
+
+@property (nonatomic, weak) id<LogoutHandlerDelegate> delegate;
 
 - (instancetype)init;
 - (void)logout;
