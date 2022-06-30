@@ -33,6 +33,7 @@
     
     self.postHandler = [[ParsePostHandler alloc] init];
     self.postHandler.delegate = self;
+    self.posts = [[NSMutableArray alloc] init];
     [self fetchPosts];
     
     UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
@@ -49,8 +50,19 @@
     [self.postHandler queryHomePosts];
 }
 
+- (void)fetchMorePosts:(Post *)post {
+    [self.postHandler queryMorePosts:post];
+}
+
 - (void)successfullyQueried:(NSMutableArray<Post *> *)posts {
     self.posts = posts;
+    [self.timelineTableView reloadData];
+}
+
+- (void)successfullyQueriedMore:(NSMutableArray<Post *> *)posts {
+    for (int i = 0; i < posts.count; i++) {
+        [self.posts addObject:posts[i]];
+    }
     [self.timelineTableView reloadData];
 }
 
@@ -94,7 +106,12 @@
     if (indexPath.row < self.posts.count) {
         PostCellDecorator *decorator = [[PostCellDecorator alloc] init];
         [decorator decorateCell:cell withPost:self.posts[indexPath.row]];
+        
+        if (indexPath.row == self.posts.count - 1) {
+            [self fetchMorePosts:self.posts[indexPath.row - 1]];
+        }
     }
+    
     
     return cell;
 }

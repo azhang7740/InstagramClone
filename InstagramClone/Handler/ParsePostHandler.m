@@ -28,8 +28,8 @@
 }
 
 - (void)queryHomePosts{
-    PostBuilder *build = [[PostBuilder alloc] init];
-    build.delegate = self;
+    PostBuilder *builder = [[PostBuilder alloc] init];
+    builder.delegate = self;
     PFQuery *query = [PFQuery queryWithClassName:@"Post"];
     [query orderByDescending:@"createdAt"];
     [query includeKey:@"author"];
@@ -39,8 +39,29 @@
 
     [query findObjectsInBackgroundWithBlock:^(NSArray<RemotePost *> *posts, NSError *error) {
         if (posts != nil) {
-            NSMutableArray<Post *> *newPosts = [build getPostsFromRemoteArray:posts];
+            NSMutableArray<Post *> *newPosts = [builder getPostsFromRemoteArray:posts];
             [self.delegate successfullyQueried:newPosts];
+        } else {
+            
+        }
+    }];
+}
+
+- (void)queryMorePosts:(Post *)post {
+    PostBuilder *builder = [[PostBuilder alloc] init];
+    builder.delegate = self;
+    PFQuery *query = [PFQuery queryWithClassName:@"Post"];
+    [query orderByDescending:@"createdAt"];
+    [query includeKey:@"author"];
+    [query includeKey:@"createdAt"];
+    [query whereKey:@"createdAt" lessThan:post.createdAtDate];
+    
+    query.limit = 20;
+
+    [query findObjectsInBackgroundWithBlock:^(NSArray<RemotePost *> *posts, NSError *error) {
+        if (posts != nil) {
+            NSMutableArray<Post *> *newPosts = [builder getPostsFromRemoteArray:posts];
+            [self.delegate successfullyQueriedMore:newPosts];
         } else {
             
         }
