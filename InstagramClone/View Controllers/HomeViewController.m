@@ -103,9 +103,9 @@ ParsePostHandlerDelegate, LogoutHandlerDelegate, ErrorViewControllerDelegate>
 
 - (IBAction)onTapCompose:(id)sender {
     UINavigationController *composeNavigationController = (UINavigationController*)[self.storyboard instantiateViewControllerWithIdentifier:@"ComposeNavigation"];
-    ComposeViewController *composeController = (ComposeViewController*)composeNavigationController.topViewController;
-    composeController.delegate = self;
-   [self presentViewController:composeNavigationController animated:YES completion:nil];
+    ComposeViewController *viewController = (ComposeViewController *)composeNavigationController.topViewController;
+    viewController.delegate = self;
+    [self presentViewController:composeNavigationController animated:YES completion:nil];
 }
 
 - (void)didTapCancel {
