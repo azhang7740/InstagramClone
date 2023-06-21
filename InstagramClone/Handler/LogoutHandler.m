@@ -20,7 +20,7 @@
 - (void)logout {
     [PFUser logOutInBackgroundWithBlock:^(NSError * _Nullable error) {
         if (error) {
-            
+            [self.delegate failedLogout];
         }
     }];
     SceneDelegate *sceneDelegate = (SceneDelegate * ) UIApplication.sharedApplication.connectedScenes.allObjects.firstObject.delegate;

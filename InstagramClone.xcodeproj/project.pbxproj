@@ -32,6 +32,11 @@
 		413DE4DD286CB01D00CCF8E1 /* RemotePost.m in Sources */ = {isa = PBXBuildFile; fileRef = 413DE4DC286CB01D00CCF8E1 /* RemotePost.m */; };
 		413DE4E0286CB03A00CCF8E1 /* ParsePostHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 413DE4DF286CB03A00CCF8E1 /* ParsePostHandler.m */; };
 		413DE4EC286CBBE500CCF8E1 /* PostBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 413DE4EB286CBBE500CCF8E1 /* PostBuilder.m */; };
+		413DE4EF286E1D3F00CCF8E1 /* ErrorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 413DE4EE286E1D3F00CCF8E1 /* ErrorViewController.m */; };
+		413DE4F2286E227F00CCF8E1 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 413DE4F1286E227F00CCF8E1 /* ProfileViewController.m */; };
+		413DE4F5286E22A500CCF8E1 /* ProfileView.m in Sources */ = {isa = PBXBuildFile; fileRef = 413DE4F4286E22A500CCF8E1 /* ProfileView.m */; };
+		413DE4F8286E249800CCF8E1 /* PostCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 413DE4F7286E249800CCF8E1 /* PostCollectionCell.m */; };
+		413DE4FB286E445100CCF8E1 /* ParseUserHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 413DE4FA286E445100CCF8E1 /* ParseUserHandler.m */; };
 		43382D73B79D0DE80E660EB5 /* libPods-InstagramClone.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A9E1F467D50BE9017540C8F /* libPods-InstagramClone.a */; };
 		A8276D6A76135F6FF4DF0A35 /* libPods-InstagramClone-InstagramCloneUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EE90C1AC95AE43B6E0DD28E /* libPods-InstagramClone-InstagramCloneUITests.a */; };
 		B22AE57948E1D450B11E1696 /* libPods-InstagramCloneTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B3219C15214247C969E7551B /* libPods-InstagramCloneTests.a */; };
@@ -101,6 +106,16 @@
 		413DE4DF286CB03A00CCF8E1 /* ParsePostHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ParsePostHandler.m; sourceTree = "<group>"; };
 		413DE4EA286CBBE500CCF8E1 /* PostBuilder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostBuilder.h; sourceTree = "<group>"; };
 		413DE4EB286CBBE500CCF8E1 /* PostBuilder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostBuilder.m; sourceTree = "<group>"; };
+		413DE4ED286E1D3F00CCF8E1 /* ErrorViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ErrorViewController.h; sourceTree = "<group>"; };
+		413DE4EE286E1D3F00CCF8E1 /* ErrorViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ErrorViewController.m; sourceTree = "<group>"; };
+		413DE4F0286E227F00CCF8E1 /* ProfileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		413DE4F1286E227F00CCF8E1 /* ProfileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
+		413DE4F3286E22A500CCF8E1 /* ProfileView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfileView.h; sourceTree = "<group>"; };
+		413DE4F4286E22A500CCF8E1 /* ProfileView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileView.m; sourceTree = "<group>"; };
+		413DE4F6286E249800CCF8E1 /* PostCollectionCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostCollectionCell.h; sourceTree = "<group>"; };
+		413DE4F7286E249800CCF8E1 /* PostCollectionCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostCollectionCell.m; sourceTree = "<group>"; };
+		413DE4F9286E445100CCF8E1 /* ParseUserHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ParseUserHandler.h; sourceTree = "<group>"; };
+		413DE4FA286E445100CCF8E1 /* ParseUserHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ParseUserHandler.m; sourceTree = "<group>"; };
 		5615EC1A17DD6856BDD632B1 /* Pods-InstagramClone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstagramClone.release.xcconfig"; path = "Target Support Files/Pods-InstagramClone/Pods-InstagramClone.release.xcconfig"; sourceTree = "<group>"; };
 		5A9E1F467D50BE9017540C8F /* libPods-InstagramClone.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-InstagramClone.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BAF0152BC7CACBDF3C0D18A /* Pods-InstagramClone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstagramClone.debug.xcconfig"; path = "Target Support Files/Pods-InstagramClone/Pods-InstagramClone.debug.xcconfig"; sourceTree = "<group>"; };
@@ -210,6 +225,10 @@
 				413DE4C3286A7B3200CCF8E1 /* ComposeView.h */,
 				413DE4C4286A7B3200CCF8E1 /* ComposeView.m */,
 				413DE4D5286BA9EF00CCF8E1 /* PostCell.xib */,
+				413DE4F3286E22A500CCF8E1 /* ProfileView.h */,
+				413DE4F4286E22A500CCF8E1 /* ProfileView.m */,
+				413DE4F6286E249800CCF8E1 /* PostCollectionCell.h */,
+				413DE4F7286E249800CCF8E1 /* PostCollectionCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -225,6 +244,10 @@
 				413DE4C1286A77DC00CCF8E1 /* ComposeViewController.m */,
 				413DE4D2286B9AEB00CCF8E1 /* DetailsViewController.h */,
 				413DE4D3286B9AEB00CCF8E1 /* DetailsViewController.m */,
+				413DE4ED286E1D3F00CCF8E1 /* ErrorViewController.h */,
+				413DE4EE286E1D3F00CCF8E1 /* ErrorViewController.m */,
+				413DE4F0286E227F00CCF8E1 /* ProfileViewController.h */,
+				413DE4F1286E227F00CCF8E1 /* ProfileViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -240,6 +263,8 @@
 				413DE4DF286CB03A00CCF8E1 /* ParsePostHandler.m */,
 				413DE4EA286CBBE500CCF8E1 /* PostBuilder.h */,
 				413DE4EB286CBBE500CCF8E1 /* PostBuilder.m */,
+				413DE4F9286E445100CCF8E1 /* ParseUserHandler.h */,
+				413DE4FA286E445100CCF8E1 /* ParseUserHandler.m */,
 			);
 			path = Handler;
 			sourceTree = "<group>";
@@ -527,13 +552,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				413DE4F5286E22A500CCF8E1 /* ProfileView.m in Sources */,
 				413DE4B7286A55E200CCF8E1 /* AuthenticationHandler.m in Sources */,
 				413DE4B2286A26D000CCF8E1 /* LoginView.m in Sources */,
 				413DE4BC286A6CF700CCF8E1 /* LogoutHandler.m in Sources */,
+				413DE4F2286E227F00CCF8E1 /* ProfileViewController.m in Sources */,
 				413DE4DA286C90E000CCF8E1 /* PostCellDecorator.m in Sources */,
 				413DE4C2286A77DC00CCF8E1 /* ComposeViewController.m in Sources */,
 				413DE475286A204900CCF8E1 /* AppDelegate.m in Sources */,
 				413DE486286A204900CCF8E1 /* main.m in Sources */,
+				413DE4FB286E445100CCF8E1 /* ParseUserHandler.m in Sources */,
 				413DE4DD286CB01D00CCF8E1 /* RemotePost.m in Sources */,
 				413DE4BF286A768000CCF8E1 /* PostCell.m in Sources */,
 				413DE4C9286A982F00CCF8E1 /* Post.m in Sources */,
@@ -542,6 +570,8 @@
 				413DE4EC286CBBE500CCF8E1 /* PostBuilder.m in Sources */,
 				413DE4E0286CB03A00CCF8E1 /* ParsePostHandler.m in Sources */,
 				413DE4D4286B9AEB00CCF8E1 /* DetailsViewController.m in Sources */,
+				413DE4EF286E1D3F00CCF8E1 /* ErrorViewController.m in Sources */,
+				413DE4F8286E249800CCF8E1 /* PostCollectionCell.m in Sources */,
 				413DE4AC286A265800CCF8E1 /* LoginViewController.m in Sources */,
 				413DE4C5286A7B3200CCF8E1 /* ComposeView.m in Sources */,
 			);
@@ -649,7 +679,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.7;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -701,7 +731,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.7;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
